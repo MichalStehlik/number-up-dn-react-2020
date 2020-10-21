@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import UpDown from "./components/UpDown";
 
 function App() {
+  const [a, setA] = useState(4);
+  const [b, setB] = useState(6);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>{a + b}</p>
+      <UpDown value={a} min={0} max={10} setValue={setA} />
+      <UpDown value={b} min={0} max={10} setValue={setB} />
     </div>
   );
 }
